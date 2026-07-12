@@ -28,8 +28,6 @@ Industrial Engineer transitioning into Data Analytics and Automation. This repos
 
 └── proyectos/                 # Final integrated projects
 
-
-
 \## Learning Phases
 
 
