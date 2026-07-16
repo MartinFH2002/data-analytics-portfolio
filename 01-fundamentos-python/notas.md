@@ -134,7 +134,7 @@ Se explica cómo usar VSCode para escribir código y correrlo en la terminal nat
 ### Funciones nativas
 Python cuenta con una serie de funciones propias, que se pueden usar de manera estándar, sin importar ni configurar nada. Entre las más comunes encontramos: print(), len(), type(), int(), float(), str(), input(), list(), dict(), min(), max(), sum(), sorted(), open(), file(), help(), and dir(). Esta imagen tiene funciones de python:
 
-![Reference chart displaying Python built-in functions organized by category including type conversions, sequence operations, mathematical functions, input/output, and file handling with function names and brief descriptions](C:\Users\marti\data-analytics-portfolio\01-fundamentos-python\Images-01\builtin-functions.png)
+![Reference chart displaying Python built-in functions](Images-01/builtin-functions.png)
 
 Las funciones más comunes son:
 - print(): como ya vimos sirve para mostrar resultados o lo que nosotros queramos al correr el código.
@@ -218,4 +218,102 @@ print("Mi edad es " + str(22))  # Mi edad es 22
 - `str()` - convierte a texto
 
 **Cuando tengas error por tipos incompatibles, convierte uno de los datos al tipo del otro.**
+
+## Día 3: Operadores
+
+### Boolean
+
+Un dato del tipo booleano representa uno de los de estos dos valores: *True* (Verdadero) o *False* (Falso). Notar que deben comenzar con mayúsculas. El uso de estos valores se aclarará cuando veamos la operación de comparación, por ejemplo.
+
+### Operadores
+
+El lenguaje de python tiene varios tipos de operadores.
+
+**Operadores de asignación**
+
+Estos operadores se utilizan para asignar valores a las variables. El operador más comun, como ya vimos es el signo igual (=). En la imágen podemos encontrar otros operadores de este tipo.
+
+![Assignament Operators](Images-01/assignment_operators.png)
+
+**Operadores aritméticos**
+Ya los vimos, son los que se utilizan para sumar, restar, multiplicar, etc.
+
+![Arithmetic Operators](Images-01/arithmetic_operators.png)
+
+**Operadores de comparación**
+
+A la hora de programar, suele ser útil comparar valores. Para ello usamos los operadores de comparación. Al comparar dos valores, podemos verificar si son iguales, si son distintos, si uno es mayor o menor que el otro, etc. En la siguiente imágen vemos los operadores de comparación que podemos usar en python.
+
+![Comparison Operators](Images-01/comparison_operators.png)
+
+Como resultado vamos a obtener valores booleanos, es decir, verdadero o falso. Ejemplos:
+
+```python
+print(3 > 2)     # True, because 3 is greater than 2
+print(3 >= 2)    # True, because 3 is greater than 2
+print(3 < 2)     # False,  because 3 is greater than 2
+print(2 < 3)     # True, because 2 is less than 3
+print(2 <= 3)    # True, because 2 is less than 3
+print(3 == 2)    # False, because 3 is not equal to 2
+print(3 != 2)    # True, because 3 is not equal to 2
+print(len('mango') == len('avocado'))  # False
+print(len('mango') != len('avocado'))  # True
+print(len('mango') < len('avocado'))   # True
+print(len('milk') != len('meat'))      # False
+print(len('milk') == len('meat'))      # True
+print(len('tomato') == len('potato'))  # True
+print(len('python') > len('dragon'))   # False
+
+
+# Comparing something gives either a True or False
+
+print('True == True: ', True == True) #True
+print('True == False: ', True == False) #False
+print('False == False:', False == False) #True
+```
+En adición a los operadores de comparación que vimos antes, también se python tiene:
+
+- *is*: compara si dos variables son el mismo objeto en memoria. 
+- *is not*: compara si dos variables **no** son el mismo objeto en la memoria.
+- *in*: verifica si un elemento está dentro de una colección, entendiendo a colección cómo cualquier cosa que tenga mútiples elementos (listas, string, tuplas, diccionarios, ser, rangos).
+- *not in*: verifica que un elemento **no** esté dentro de una colección.
+
+Ejemplos:
+```python
+print('1 is 1', 1 is 1)                   # True - because the data values are the same
+print('1 is not 2', 1 is not 2)           # True - because 1 is not 2
+print('A in Asabeneh', 'A' in 'Asabeneh') # True - A found in the string
+print('B not in Asabeneh', 'B' in 'Asabeneh') # False - there is no uppercase B
+print('coding' in 'coding for all') # True - because coding for all has the word coding
+print('a in an:', 'a' in 'an')      # True
+print('4 is 2 ** 2:', 4 is 2 ** 2)   # True
+```
+
+**Operadores lógicos**
+
+Son tres: *and*, *or* y *not*. Son los operadores que se ven el lógica proposicional. 
+- *and*: Es **verdadera** solo si **ambas** proposiciones son **verdaderas**.
+- *or*: Es **Falsa** solo si **ambas** preposiciones son **falsas**.
+- *not*: Es una negación, toma el valor opuesto a la preposición. Es decir, si una a es verdadero, not a es falso.
+
+![Logical Operators](Images-01/logical_operators.png)
+
+Ejemplos:
+```python
+print(3 > 2 and 4 > 3) # True - because both statements are true
+print(3 > 2 and 4 < 3) # False - because the second statement is false
+print(3 < 2 and 4 < 3) # False - because both statements are false
+print('True and True: ', True and True)
+print(3 > 2 or 4 > 3)  # True - because both statements are true
+print(3 > 2 or 4 < 3)  # True - because one of the statements is true
+print(3 < 2 or 4 < 3)  # False - because both statements are false
+print('True or False:', True or False)
+print(not 3 > 2)     # False - because 3 > 2 is true, then not True gives False
+print(not True)      # False - Negation, the not operator turns true to false
+print(not False)     # True
+print(not not True)  # True
+print(not not False) # False
+```
+ 
+Con lo visto hasta ahora, entendemos que podemos realizar muchas cosas al asignar valores a variables mediante funciones nativas y/o operadores como los vistos anteriormente. Todos estos conceptos básicos de programación los tengo de Cálculo Numérico, por lo que no voy a profundizar mucho más.
 
