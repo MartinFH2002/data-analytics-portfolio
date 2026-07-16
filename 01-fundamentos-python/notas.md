@@ -129,3 +129,93 @@ Acá básicamente se explica lo que es un archivo de python y lo más importante
 
 Se explica cómo usar VSCode para escribir código y correrlo en la terminal nativa. Ya lo había aprendido con Claude, de igual forma realicé el ejercicio propuesto, creando un archivo llamado *"Day1.py "*.
 
+## Día 2: Variables, funciones nativas
+
+### Funciones nativas
+Python cuenta con una serie de funciones propias, que se pueden usar de manera estándar, sin importar ni configurar nada. Entre las más comunes encontramos: print(), len(), type(), int(), float(), str(), input(), list(), dict(), min(), max(), sum(), sorted(), open(), file(), help(), and dir(). Esta imagen tiene funciones de python:
+
+![Reference chart displaying Python built-in functions organized by category including type conversions, sequence operations, mathematical functions, input/output, and file handling with function names and brief descriptions](C:\Users\marti\data-analytics-portfolio\01-fundamentos-python\Images-01\builtin-functions.png)
+
+Las funciones más comunes son:
+- print(): como ya vimos sirve para mostrar resultados o lo que nosotros queramos al correr el código.
+- len(): cuenta el número de caracteres del dato contando espacios.
+- type(): verifica el tipo de dato.
+- str(): convierte el dato a string.
+- int(): convierte el dato a número entero.
+- float(): convierte el dato a número con decimales.
+- input(): sirve para que el usuario ingrese el dato.
+- help ('keywords'): nos muestra toda las palabras reservadas de python. Éstas no pueden ser utilizadas para declarar variables o definir funciones nuevas.
+- help (str): muestra documentación completa sobre strings: qué es, qué puedes hacer con ellos, etc.
+- dir (str): muestra todas las funciones disponibles para strings.
+- min(): da el valor mínimo entre los datos del argumento (sueltos en lista)
+- max(): da el valor máximo entre los datos del argumento (sueltos o en lista)
+- sum(): suma los elementos de la lista (funciona sólo con listas)
+
+### Variables
+
+Una variable es básicamente un espacio en la memoria de la computadora en la cual se va a guardar un dato. Las variables son nombradas, de manera tal que su nombre es la dirección del espacio en la memoria en la que se guarda el dato. Para nombrar una variable, es altamente recomendable colocarle un nombre fácil de asociar y recordar. 
+
+Reglas para nombrar a una variable:
+- Debe empezar con una letra.
+- No puede empezar con un número o un carácter especial.
+- Sólo puede contener carácteres alfanuméricos y guión bajo (A-z, 0-9, y _).
+- Las mayúsculas importan (familyname, FamilyName,familyName se consideran variables distintas).
+
+Algunos ejemplos de nombres válidos:
+
+```python
+firstname
+lastname
+age
+country
+city
+first_name
+last_name
+capital_city
+_if # if we want to use reserved word as a variable
+year_2021
+year2021
+current_year_2021
+birth_year
+num1
+num2
+```
+
+Algunos nombres inválidos:
+
+```python
+first-name
+first@name
+first$name
+num-1
+1num
+```
+
+Existe una convención ampliamente utilizada para nombrar variables que consiste en que cuando el nombre de una variable contiene más de una palabra, las mismas se separan con un guión bajo. Ej: *family_name*
+
+Para guardar un valor dentro de una variable se utiliza el símbolo igual (=). Al asignarle un determinado tipo de dato a la variable, se dice que hacemos una *declaración de variable*.
+
+Las variables pasan a ser los argumentos de las funciones que vimos más arriba. También es posible hacer que el usuario asigne un dato a la variable utilizando la función input. Ej: 
+```python
+first_name = input('Enter your first name:')
+```
+
+**Casting - Convertir Tipos de Datos**
+
+Para hacer operaciones entre datos, generalmente deben ser del **mismo tipo**. Si no, Python da error.
+
+```python
+# ERROR - tipos incompatibles
+print("Mi edad es " + 22)
+
+# SOLUCIÓN - convertir a string
+print("Mi edad es " + str(22))  # Mi edad es 22
+```
+
+**Funciones de conversión:**
+- `int()` - convierte a número entero
+- `float()` - convierte a decimal
+- `str()` - convierte a texto
+
+**Cuando tengas error por tipos incompatibles, convierte uno de los datos al tipo del otro.**
+
