@@ -317,3 +317,216 @@ print(not not False) # False
  
 Con lo visto hasta ahora, entendemos que podemos realizar muchas cosas al asignar valores a variables mediante funciones nativas y/o operadores como los vistos anteriormente. Todos estos conceptos básicos de programación los tengo de Cálculo Numérico, por lo que no voy a profundizar mucho más.
 
+## Día 4: Strings
+
+### String
+
+Como ya vimos, un string es un tipo de dato conformado por una colección de caracteres que se encuentran entere comillas simples, dobles o triples (cuando son varias líneas de texto). Es en palabras simples, texto. Existen diversos métodos y funciones nativas para trabajar con strings, veremos algunas a continuación.
+
+Ya hemos visto como se crean los stirngs, y también que la función *len()* nos permite saber la cantidad de caracteres del string. A continuación se muestran algunos ejemplos.
+
+```python
+letter = 'P'                # A string could be a single character or a bunch of texts
+print(letter)               # P
+print(len(letter))          # 1
+greeting = 'Hello, World!'  # String could be made using a single or double quote,"Hello, World!"
+print(greeting)             # Hello, World!
+print(len(greeting))        # 13
+sentence = "I hope you are enjoying 30 days of Python Challenge"
+print(sentence)
+ ```
+
+Un string que ocupa múltiples líneas de código se escribe entre triples comillas (simples o dobles).
+
+```python
+multiline_string = '''I am a teacher and enjoy teaching.
+I didn't find anything as rewarding as empowering people.
+That is why I created 30 days of python.'''
+print(multiline_string)
+
+# Another way of doing the same thing
+multiline_string = """I am a teacher and enjoy teaching.
+I didn't find anything as rewarding as empowering people.
+That is why I created 30 days of python."""
+print(multiline_string)
+```
+
+### Concatenación de strings
+
+Es posible unir strings, eso se llama concatenación:
+
+```python
+first_name = 'Asabeneh'
+last_name = 'Yetayeh'
+space = ' '
+full_name = first_name  +  space + last_name
+print(full_name) # Asabeneh Yetayeh
+# Checking the length of a string using len() built-in function
+print(len(first_name))  # 8
+print(len(last_name))   # 7
+print(len(first_name) > len(last_name)) # True
+print(len(full_name)) # 16
+```
+
+### Secuencias de Escape en Strings
+
+Las secuencias de escape son códigos especiales (que empiezan con `\`) que hacen cosas especiales dentro de strings.
+
+**Ejemplos:**
+
+```python
+# \n - Nueva línea
+print("Hola\nMundo")
+# Output:
+# Hola
+# Mundo
+
+# \t - Tab (tabulación)
+print("Nombre\tEdad")
+print("Martin\t22")
+print("Juan\t25")
+# Output:
+# Nombre	Edad
+# Martin	22
+# Juan	25
+
+# \\ - Barra invertida (\)
+print("Ruta: C:\\Users\\marti\\archivo.txt")
+# Output: Ruta: C:\Users\marti\archivo.txt
+
+# \' - Comilla simple dentro de comilla simple
+print('It\'s working')
+# Output: It's working
+
+# \" - Comilla doble dentro de comilla doble
+print("Dijo \"Hola\"")
+# Output: Dijo "Hola"
+```
+
+**Resumen**
+
+Son trucos para hacer cosas especiales dentro de strings. Cuando Python ve `\` seguido de ciertos caracteres, lo interpreta como una instrucción especial.
+
+### Formateo de Strings
+
+En Python hay varias formas de insertar variables dentro de strings. Aquí están las tres principales:
+
+#### 1. Operador % (Estilo Antiguo)
+
+Usa el operador `%` con placeholders especiales:
+
+```python
+first_name = 'Martin'
+last_name = 'Herrera'
+language = 'Python'
+formated_string = 'I am %s %s. I teach %s' % (first_name, last_name, language)
+print(formated_string)
+# Output: I am Martin Herrera. I teach Python
+
+# Con números
+radius = 10
+pi = 3.14
+area = pi * radius ** 2
+formated_string = 'The area of circle with radius %d is %.2f.' % (radius, area)
+print(formated_string)
+# Output: The area of circle with radius 10 is 314.00.
+```
+
+**Placeholders:**
+- `%s` - String
+- `%d` - Integer
+- `%f` - Float
+- `%.2f` - Float con 2 dígitos decimales
+
+#### 2. Método .format() (Moderno)
+
+Usa `{}` como placeholders y el método `.format()`:
+
+```python
+first_name = 'Martin'
+last_name = 'Herrera'
+language = 'Python'
+formated_string = 'I am {} {}. I teach {}'.format(first_name, last_name, language)
+print(formated_string)
+# Output: I am Martin Herrera. I teach Python
+
+# Con operaciones
+a = 4
+b = 3
+print('{} + {} = {}'.format(a, b, a + b))
+# Output: 4 + 3 = 7
+
+# Con decimales
+print('{} / {} = {:.2f}'.format(a, b, a / b))
+# Output: 4 / 3 = 1.33
+
+# Otro ejemplo
+radius = 10
+pi = 3.14
+area = pi * radius ** 2
+formated_string = 'The area of a circle with radius {} is {:.2f}.'.format(radius, area)
+print(formated_string)
+# Output: The area of a circle with radius 10 is 314.00.
+```
+
+#### 3. F-Strings (Más Moderno - Python 3.6+)
+
+Empezás el string con `f` e insertas variables entre `{}`:
+
+```python
+a = 4
+b = 3
+
+# Operaciones básicas
+print(f'{a} + {b} = {a + b}')
+# Output: 4 + 3 = 7
+
+print(f'{a} - {b} = {a - b}')
+# Output: 4 - 3 = 1
+
+print(f'{a} * {b} = {a * b}')
+# Output: 4 * 3 = 12
+
+# Con decimales
+print(f'{a} / {b} = {a / b:.2f}')
+# Output: 4 / 3 = 1.33
+
+print(f'{a} % {b} = {a % b}')
+# Output: 4 % 3 = 1
+
+print(f'{a} // {b} = {a // b}')
+# Output: 4 // 3 = 1
+
+print(f'{a} ** {b} = {a ** b}')
+# Output: 4 ** 3 = 64
+
+# Otro ejemplo con círculo
+radius = 10
+pi = 3.14
+area = pi * radius ** 2
+formated_string = f'The area of a circle with radius {radius} is {area:.2f}.'
+print(formated_string)
+# Output: The area of a circle with radius 10 is 314.00.
+```
+
+#### Comparación de los 3 métodos:
+
+```python
+a = 4
+b = 3
+
+# % (antiguo)
+print('%d + %d = %d' % (a, b, a + b))
+
+# .format() (moderno)
+print('{} + {} = {}'.format(a, b, a + b))
+
+# f-string (más moderno)
+print(f'{a} + {b} = {a + b}')
+
+# Todos dan: 4 + 3 = 7
+```
+
+#### Recomendación:
+
+**Usar f-strings.** Son más legibles, más simples y es el estándar actual en Python.
