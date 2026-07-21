@@ -530,3 +530,249 @@ print(f'{a} + {b} = {a + b}')
 #### Recomendación:
 
 **Usar f-strings.** Son más legibles, más simples y es el estándar actual en Python.
+
+### Strings como secuencias de caracteres
+
+Un stirng es una secuencia de caracteres, y comparten los mismos métodos de acceso con las demás secuencias ordenadas de caracteres como las listas y las tuplas. Ls forma más sencilla de extraer carácteres individuales de un string (y de cualquier secuencia ordenada en general) es desglosando los caracteres en variables. 
+
+Por ejemplo:
+```python
+language = 'Python'
+a,b,c,d,e,f = language # unpacking sequence characters into variables
+print(a) # P
+print(b) # y
+print(c) # t
+print(d) # h
+print(e) # o
+print(f) # n
+```
+#### Acceder a los caracteres por índices
+
+Al igual que en las listas y tuplas, podemos acceder a los caracteres del string mediante el uso de su índice. Siempre se comienza a contar desde cero, por lo tanto la primer letra o carácter del string es correspondiente al índice 0.
+
+Por ejemplo:
+```python
+language = 'Python'
+first_letter = language[0]
+print(first_letter) # P
+second_letter = language[1]
+print(second_letter) # y
+last_index = len(language) - 1
+last_letter = language[last_index]
+print(last_letter) # n
+```
+**Nota:**Es posible utilizar el índice negativo para empezar desde el final del string hacia el inicio. Ej:
+```python
+language = 'Python'
+last_letter = language[-1]
+print(last_letter) # n
+second_last = language[-2]
+print(second_last) # o
+```
+#### División del string
+
+Es posible dividir un string en substrings.
+
+```python
+language = 'Python'
+first_three = language[0:3] # starts at zero index and up to 3 but not include 3
+print(first_three) #Pyt
+last_three = language[3:6]
+print(last_three) # hon
+# Another way
+last_three = language[-3:]
+print(last_three)   # hon
+last_three = language[3:]
+print(last_three)   # hon
+```
+#### Dar vuelta un string
+
+Es fácil dar vuelta un string en python.
+```python
+greeting = 'Hello, World!'
+print(greeting[::-1]) # !dlroW ,olleH
+```
+#### División de string salteando caracteres
+
+Se realiza mediante la asignación de un paso. Por ejemplo, para un paso 2 se tomará un caracter de a cada dos. En el ejemplo se ve más claro.
+```python
+language = 'Python'
+pto = language[0:6:2] #Step: 2
+print(pto) # Pto
+```
+### Métodos para trabajar con strings
+
+Vamos a ver algunos métodos utilizados para formatear strings.
+
+- capitalize(): Pone en mayúscula el primer caracter del string.
+```python
+challenge = 'thirty days of python'
+print(challenge.capitalize()) # 'Thirty days of python'
+```
+- count(): nos devuelve la cantidad de substrings dentro de un strings. Por ejemplo, contar cuantas "y" hay en la palabra "Python".
+```python
+challenge = 'thirty days of python'
+print(challenge.count('y')) # 3
+print(challenge.count('y', 7, 14)) # 1, Los otro sdos argumentos dan el rango de búsqueda.
+print(challenge.count('th')) # 2`
+```
+
+- endswith(): Verifica si un string termina con alguna conjunción determinada de carácteres.
+```python
+challenge = 'thirty days of python'
+print(challenge.endswith('on'))   # True
+print(challenge.endswith('tion')) # False
+```
+
+- startswith(): verifica si un string comienza de una manera determinada.
+```python 
+challenge = 'thirty days of python'
+print(challenge.startswith('thirty')) # True
+
+challenge = '30 days of python'
+print(challenge.startswith('thirty')) # False
+```
+
+- expandtabs(): reemplaza el carácter tab ('\') por espacios. El tamaño estándar del tab es 8, pero se puede cambiar usando otro argumento.
+```python
+challenge = 'thirty\tdays\tof\tpython'
+print(challenge.expandtabs())   # 'thirty  days    of      python'
+print(challenge.expandtabs(10)) # 'thirty    days      of        python'
+```
+
+- find(): nos muestra el índice del primer substring que se encuentra en el string.
+```python
+challenge = 'thirty days of python'
+print(challenge.find('y'))  # 5
+print(challenge.find('th')) # 0
+```
+
+- rfind(): nos muestra el índice del último substring que se encuentra en el string.
+```python
+challenge = 'thirty days of python'
+print(challenge.rfind('y'))  # 16
+print(challenge.rfind('th')) # 17
+```
+
+- index() y rindex(): funcionan respectivamente como find() y rfind(), con una única diferencia. Cuando no se encuentra el substring solicitado, estos retornan error, mientras que los anteriores devulven un '-1'.
+
+- isalnum(): verifica que todos los carácteres del string sean alfanuméricos.
+```python
+challenge = 'ThirtyDaysPython'
+print(challenge.isalnum()) # True
+
+challenge = '30DaysPython'
+print(challenge.isalnum()) # True
+
+challenge = 'thirty days of python'
+print(challenge.isalnum()) # False, space is not an alphanumeric character
+
+challenge = 'thirty days of python 2019'
+print(challenge.isalnum()) # False
+```
+- isalpha(): verifica que todos los elementos del string formen parte del alfabeto (a-z y A-Z).
+```python
+challenge = 'thirty days of python'
+print(challenge.isalpha()) # False, space is once again excluded
+challenge = 'ThirtyDaysPython'
+print(challenge.isalpha()) # True
+num = '123'
+print(num.isalpha())      # False
+```
+
+- isdecimal(): verifica que todos los carácteres sean números decimales puros (0-9). Menos permisivo.
+```python
+print('123'.isdecimal())    # True
+print('²³'.isdecimal())     # False (no son decimales)
+print('½'.isdecimal())      # False (no es decimal)
+print('12.5'.isdecimal())   # False (tiene punto)
+print('12a'.isdecimal())    # False (tiene letra)
+```
+- isdigit(): verifica que todos los caracteres sean números. Más permisivo.
+```python
+print('123'.isdigit())      # True
+print('²³'.isdigit())       # True (superíndices)
+print('½'.isdigit())        # True (fracciones)
+print('12.5'.isdigit())     # False (tiene punto)
+print('12a'.isdigit())      # False (tiene letra)
+```
+
+- isnumeric(): es como isdigit() pero permite más simbolos todavía.
+
+- isidentifier(): Verifica si el string es un nombre válido para declarar una variable.
+```python
+challenge = '30DaysOfPython'
+print(challenge.isidentifier()) # False, because it starts with a number
+challenge = 'thirty_days_of_python'
+print(challenge.isidentifier()) # True
+```
+
+- islower(): verifica que todos los caracteres alfabéticos del string estén en minúsculas.
+- isupper(): verifica que todos los caracteres alfabéticos del string estén en mayúsculas.
+
+- join(): une elementos de una lista usando un separador indicado.
+```python
+web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
+result = ' '.join(web_tech) # 'separador'.join(variable o strings) - En este caso el separador es el espacio.
+print(result) # 'HTML CSS JavaScript React'
+
+web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
+result = '# '.join(web_tech) # En este caso el separador es #
+print(result) # 'HTML# CSS# JavaScript# React'
+```
+- strip(): elimina caracteres específicos (por defecto espacios en blanco) **solo del inicio y final** del string, no del medio.
+```python
+# strip() - Elimina de ambos lados
+texto = "  hola mundo  "
+print(texto.strip())  # "hola mundo"
+
+texto = "xxxhola xxx"
+print(texto.strip('x'))  # "hola " (elimina 'x' de extremos)
+
+texto = "xyxyholaxyx"
+print(texto.strip('xy'))  # "hola" (elimina 'x' e 'y' de extremos)
+
+# lstrip() - Elimina solo del lado izquierdo
+texto = "  hola  "
+print(texto.lstrip())  # "hola  "
+
+# rstrip() - Elimina solo del lado derecho
+texto = "  hola  "
+print(texto.rstrip())  # "  hola"
+
+# Sin argumentos, elimina espacios en blanco
+texto = "  hola  "
+print(texto.strip())  # "hola"
+
+# Los argumentos son un conjunto de caracteres a eliminar
+texto = "hola mundo hola"
+print(texto.strip('hola'))  # " mundo " (no elimina del medio, solo extremos)
+```
+
+**Nota:** `strip()` solo elimina de los **extremos**. Si necesitas limpiar caracteres del medio del string, usa `replace()`.
+
+- replace(): reemplaza un substring por un string dado.
+```python
+challenge = 'thirty days of python'
+print(challenge.replace('python', 'coding')) # 'thirty days of coding'
+```
+- split(): divide un string en una lista usando un separador.
+```python
+challenge = 'thirty days of python'
+print(challenge.split()) # ['thirty', 'days', 'of', 'python']
+challenge = 'thirty, days, of, python'
+print(challenge.split(', ')) # ['thirty', 'days', 'of', 'python']
+```
+- title (): Devuelve el string como un título.
+```python
+challenge = 'thirty days of python'
+print(challenge.title()) # Thirty Days Of Python
+```
+
+-swapcase(): cambia minúsculas a mayúsculas y viceversa.
+```python
+challenge = 'thirty days of python'
+print(challenge.swapcase())   # THIRTY DAYS OF PYTHON
+challenge = 'Thirty Days Of Python'
+print(challenge.swapcase())  # tHIRTY dAYS oF pYTHON
+```
