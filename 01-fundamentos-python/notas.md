@@ -776,3 +776,360 @@ print(challenge.swapcase())   # THIRTY DAYS OF PYTHON
 challenge = 'Thirty Days Of Python'
 print(challenge.swapcase())  # tHIRTY dAYS oF pYTHON
 ```
+
+## Día 5: Listas
+
+Hay cuatro tipos de colecciones de datos en Python, como ya vimos:
+
+- **Listas**: es una colección de datos ordenada y modificable. Permite elementos duplicados.
+- **Tuplas**: es una colección de datos ordenada e inmutable (no se puede modificar). Permite elementos duplicados.
+- **Sets**: es una colección de datos desordenados, sin índices, e inmutable (pero se pueden agregar elementos). No permite elementos duplicados.
+- **Diccionarios**: es una colección desordenada, pero indexada, es decir que se accede a cada elemento mediante un índice. No permite elementos duplicados.
+
+### ¿Cómo se crea una lista?
+
+Existen dos formas:
+
+- Usando la función nativa *list()*:
+
+```python
+empty_list = list() # this is an empty list, no item in the list
+print(len(empty_list)) # 0
+```
+
+- Usando corchetes ([]):
+
+```python
+empty_list = [] # this is an empty list, no item in the list
+print(len(empty_list)) # 0
+```
+
+Nota 1: La función *len()* nos da la cantidad de elementos que contiene la lista. 
+Nota 2: Una lista puede contener datos de distintos tipos.
+
+### Acceder a los elementos de la lista mediante índices positivos
+
+Es posible acceder a los elementos de la lísta mediante su índice. En Python, los índices comienzan siempre desde el número 0. Por ejemplo:
+
+!["Ejemplo de índice en una lista"](Images-01/list_index.png)
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+first_fruit = fruits[0] # we are accessing the first item using its index
+print(first_fruit)      # banana
+second_fruit = fruits[1]
+print(second_fruit)     # orange
+last_fruit = fruits[3]
+print(last_fruit) # lemon
+# Last index
+last_index = len(fruits) - 1
+last_fruit = fruits[last_index]
+```
+### Acceder a los elementos de la lista mediante índices negativos
+
+Los índices negativos comienzan desde el -1, el cual señala el último elemento. El -2 se refiere al penúltimo elemento, y así sucesivamente. Por ejemplo: 
+
+!["Ejemplo de índices negativos en una lista"](Images-01/list_negative_indexing.png)
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+first_fruit = fruits[-4]
+last_fruit = fruits[-1]
+second_last = fruits[-2]
+print(first_fruit)      # banana
+print(last_fruit)       # lemon
+print(second_last)      # mango
+```
+
+### Desarmar una lista en variables individuales
+
+Como el título lo menciona, consiste en ir desarmando la lista en variables individuales, que alojarán a cada elemento de la lista. La sintaxis es la siguiente:
+
+```python
+lst = ['item1','item2','item3', 'item4', 'item5']
+first_item, second_item, third_item, *rest = lst
+print(first_item)     # item1
+print(second_item)    # item2
+print(third_item)     # item3
+print(rest)           # ['item4', 'item5']
+```
+
+Entonces, en la variable *first_item* se alojará el elemento correspondiente al índice 0 de la lista (primer elemento), *second_item* alojará segundo, y así sucevicamente. El término "*rest aloja lo que quedo de la lista en la variable *rest*. Veamos algunos ejemplos con datos:
+
+```python
+# First Example
+fruits = ['banana', 'orange', 'mango', 'lemon','lime','apple']
+first_fruit, second_fruit, third_fruit, *rest = fruits 
+print(first_fruit)     # banana
+print(second_fruit)    # orange
+print(third_fruit)     # mango
+print(rest)           # ['lemon','lime','apple']
+# Second Example about unpacking list
+first, second, third,*rest, tenth = [1,2,3,4,5,6,7,8,9,10]
+print(first)          # 1
+print(second)         # 2
+print(third)          # 3
+print(rest)           # [4,5,6,7,8,9]
+print(tenth)          # 10
+# Third Example about unpacking list
+countries = ['Germany', 'France','Belgium','Sweden','Denmark','Finland','Norway','Iceland','Estonia']
+gr, fr, bg, sw, *scandic, es = countries
+print(gr) # 'Germany'
+print(fr) # 'France'
+print(bg) # 'Belgium'
+print(sw) # 'Sweden'
+print(scandic) # ['Denmark','Finland','Norway','Iceland']
+print(es) # 'Estonia'
+```
+### Extraer pedazos de lista
+
+Se pueden crear nuevas listas a partir de los elementos de una lista existente. Se puede hacer mediante el uso de índices positivos y negativos.
+
+- **Índices positivos**: Especificamos el rango de índices mediante el comienzo, el final y el paso. Si no se determinan, los valores por defecto son 0, el índice correspondiente al último elemento (sin incluirlo), y paso 1. (Por defecto toma toda la lista).
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+all_fruits = fruits[0:4] # it returns all the fruits
+# this will also give the same result as the one above
+all_fruits = fruits[0:] # if we don't set where to stop it takes all the rest
+orange_and_mango = fruits[1:3] # it does not include the first index
+orange_mango_lemon = fruits[1:]
+orange_and_lemon = fruits[::2] # here we used a 3rd argument, step. It will take every 2cnd item - ['banana', 'mango']
+```
+
+- **Índices negativos**: Lo mismo pero usando índices negativos.
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+all_fruits = fruits[-4:] # it returns all the fruits
+orange_and_mango = fruits[-3:-1] # it does not include the last index,['orange', 'mango']
+orange_mango_lemon = fruits[-3:] # this will give starting from -3 to the end,['orange', 'mango', 'lemon']
+reverse_fruits = fruits[::-1] # a negative step will take the list in reverse order,['lemon', 'mango', 'orange', 'banana']
+```
+
+### Modificar una lista
+
+Como mencionamos en su definición, la lista puede ser modificada.
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits[0] = 'avocado'
+print(fruits)       #  ['avocado', 'orange', 'mango', 'lemon']
+fruits[1] = 'apple'
+print(fruits)       #  ['avocado', 'apple', 'mango', 'lemon']
+last_index = len(fruits) - 1
+fruits[last_index] = 'lime'
+print(fruits)        #  ['avocado', 'apple', 'mango', 'lime']
+```
+
+### Verificar que un dato forme parte de la lista
+Se hace mediante el operador *in*.
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+does_exist = 'banana' in fruits
+print(does_exist)  # True
+does_exist = 'lime' in fruits
+print(does_exist)  # False
+```
+### Agregar elementos a una lista
+
+Se hace mediante el método *.append()*.
+
+```python
+# syntax
+lst = list()
+lst.append(item)
+# example
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.append('apple')
+print(fruits)           # ['banana', 'orange', 'mango', 'lemon', 'apple']
+fruits.append('lime')   # ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime']
+print(fruits)
+```
+### Insertat elementos en una lista
+
+Se hace mediante el método *.insert()*. La principal diferencia es que nos permite agregar elementos en posiciones específicas de la lista, usando índices. El método anterior los agrega al final siempre.
+
+```python
+# syntax
+lst = ['item1', 'item2']
+lst.insert(index, item)
+# example
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.insert(2, 'apple') # insert apple between orange and mango
+print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
+fruits.insert(3, 'lime')   # ['banana', 'orange', 'apple', 'lime', 'mango', 'lemon']
+print(fruits)
+```
+### Sacar o eliminar elementos de una lista
+
+ - Mediante el método *.remove()*: 
+
+ ```python
+ # syntax
+lst = ['item1', 'item2']
+lst.remove(item)
+ # example
+ fruits = ['banana', 'orange', 'mango', 'lemon', 'banana']
+fruits.remove('banana')
+print(fruits)  # ['orange', 'mango', 'lemon', 'banana'] - this method removes the first occurrence of the item in the list
+fruits.remove('lemon')
+print(fruits)  # ['orange', 'mango', 'banana']
+```
+
+- Mediante el método *.pop()*: este método elimina el elemento usando su índice. De forma predeterminada toma el último elemento de la lista para eliminarlo. 
+
+```python
+# syntax
+lst = ['item1', 'item2']
+lst.pop()       # last item
+lst.pop(index)
+# example
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.pop()
+print(fruits)       # ['banana', 'orange', 'mango']
+
+fruits.pop(0)
+print(fruits)       # ['orange', 'mango']
+```
+
+- Mediante la palabra clave *del*: es una palabra clave que puede usar el índice, un rango o eliminar toda la lista.
+
+```python
+# syntax
+lst = ['item1', 'item2']
+del lst[index] # only a single item
+del lst        # to delete the list completely
+# example
+fruits = ['banana', 'orange', 'mango', 'lemon', 'kiwi', 'lime']
+del fruits[0]
+print(fruits)       # ['orange', 'mango', 'lemon', 'kiwi', 'lime']
+del fruits[1]
+print(fruits)       # ['orange', 'lemon', 'kiwi', 'lime']
+del fruits[1:3]     # this deletes items between given indexes, so it does not delete the item with index 3!
+print(fruits)       # ['orange', 'lime']
+del fruits
+print(fruits)       # This should give: NameError: name 'fruits' is not defined
+```
+### Vaciar la lista
+
+Básicamente dejar la lista vacía, sin elementos, pero sin eliminarla. Se hace mediante el método *.clear()*.
+
+```python
+# syntax
+lst = ['item1', 'item2']
+lst.clear()
+# example
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.clear()
+print(fruits)       # []
+```
+### Hacer una copia de la lista
+
+Si bien podríamos hacer una copia de la lista reasignandola a una nueva variable (list2 = list1), esto haría que si modificamos la list2, la list1 también se modifique, y a veces es necesario conservar la original. Entonces para hacer una copia se utiliza el método *.copy()*
+
+```python
+# syntax
+lst = ['item1', 'item2']
+lst_copy = lst.copy()
+# example
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits_copy = fruits.copy()
+print(fruits_copy)       # ['banana', 'orange', 'mango', 'lemon']
+```
+
+### Unir listas
+
+Existen varias maneras de unir dos o más listas en python:
+
+ - El operador más (+): se usa como "list1 + list2"
+ - El método *.extend()*: se usa como "list1.extend(list2)"
+
+### Contar items en una lista
+
+Se puede contar el número de veces que un item aparece en la lista, mediante le método *.count()*
+
+```python
+# syntax
+lst = ['item1', 'item2']
+lst.count(item)
+# example
+fruits = ['banana', 'orange', 'mango', 'lemon']
+print(fruits.count('orange'))   # 1
+ages = [22, 19, 24, 25, 26, 24, 25, 24]
+print(ages.count(24))           # 3
+```
+### Encontrar el índice de un elemento
+
+Podemos saber la posición de un elmento de la lista mediante el método *.index()*:
+
+```python
+# syntax
+lst = ['item1', 'item2']
+lst.index(item)
+# example
+fruits = ['banana', 'orange', 'mango', 'lemon']
+print(fruits.index('orange'))   # 1
+ages = [22, 19, 24, 25, 26, 24, 25, 24]
+print(ages.index(24))           # 2, the first occurrence
+```
+### Dar vuelta una lista
+
+Se usa el método *.reverse()* para dar vuelta el orden de una lista.
+
+```python
+# syntax
+lst = ['item1', 'item2']
+lst.reverse()
+# example
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.reverse()
+print(fruits) # ['lemon', 'mango', 'orange', 'banana']
+ages = [22, 19, 24, 25, 26, 24, 25, 24]
+ages.reverse()
+print(ages) # [24, 25, 24, 26, 25, 24, 19, 22]
+```
+
+### Ordenar los elementos de una lista
+
+Es posible mediante dos formas.
+
+- Método *.sort()*: va a ordenar los elementos de la lista de manera ascendente por defecto. 
+
+```python
+# syntax
+lst = ['item1', 'item2']
+lst.sort()                # ascending
+lst.sort(reverse=True)    # descending
+# example
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.sort()
+print(fruits)             # sorted in alphabetical order, ['banana', 'lemon', 'mango', 'orange']
+fruits.sort(reverse=True)
+print(fruits) # ['orange', 'mango', 'lemon', 'banana']
+ages = [22, 19, 24, 25, 26, 24, 25, 24]
+ages.sort()
+print(ages) #  [19, 22, 24, 24, 24, 25, 25, 26]
+
+ages.sort(reverse=True)
+print(ages) #  [26, 25, 25, 24, 24, 24, 22, 19]
+```
+- La función *sorted()*: esta función no modifica la lista original, si no que nos da otra lista con los elementos ordenados de la lista argumento de la función.
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+print(sorted(fruits))   # ['banana', 'lemon', 'mango', 'orange']
+# Reverse order
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits = sorted(fruits,reverse=True)
+print(fruits)     # ['orange', 'mango', 'lemon', 'banana']
+```
+
+
+
+
+
+
+
+
