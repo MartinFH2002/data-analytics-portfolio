@@ -1126,6 +1126,320 @@ fruits = sorted(fruits,reverse=True)
 print(fruits)     # ['orange', 'mango', 'lemon', 'banana']
 ```
 
+## Día 6: Tuplas
+
+Una tupla es una colección de distintos tipos de datos, que se encuentran en orden y son inmutables, lo cual implica que una vez creada, no se puede modificar. Es decir, los métodos add, insert, remove no pueden ser usados en tuplas debido a que estas son inmutables. Las tuplas se definen entre paréntesis ().
+
+Las tuplas sólo cuentan con algunos pocos métodos:
+- *tuple()*: crea una tupla.
+- *count()*: cuenta el número de un item específico de la tupla.
+- *index()*: para encontrar el índice de un item específico en la tupla.
+- *+ operator*: para unir dos o más tuplas y crear una nueva.
+
+### Crear una tupla
+
+Se puede crear una tupla vacía:
+
+```python
+# syntax
+empty_tuple = ()
+# or using the tuple constructor
+empty_tuple = tuple()
+```
+Se puede crear con valores iniciales:
+
+```python
+# syntax
+tpl = ('item1', 'item2','item3')
+#example
+fruits = ('banana', 'orange', 'mango', 'lemon')
+```
+Al igual que con las listas podemos realizar las siguientes acciones:
+- Usar *len()* para determinar el tamaño de la tupla.
+- Acceder a elementos de la tupla mediante el uso de índices positivos o negativos.
+- Se pueden crear tuplas nuevas dividiendo o tomando partes (slice) de una existente.
+- Podemos verificar la presencia de un elemento determinado en la tupla utilizando **in**.
+- Podemos unir tuplas usando el operador '+'
+
+Lo unico que no podemos hacer es cambiar, añadir o eliminar elementos de la tupla.
+
+### Cambiar una tupla a lista
+
+Es posible cambiar las tuplas a listas y viceversa.
+
+```python
+# Syntax
+tpl = ('item1', 'item2', 'item3','item4')
+lst = list(tpl)
+# Example
+fruits = ('banana', 'orange', 'mango', 'lemon')
+fruits = list(fruits)
+fruits[0] = 'apple'
+print(fruits)     # ['apple', 'orange', 'mango', 'lemon']
+fruits = tuple(fruits)
+print(fruits)     # ('apple', 'orange', 'mango', 'lemon')
+```
+
+### Eliminar tuplas
+
+Como ya mencionamos, no podemos remover elementos de la tupla, pero si es posible eliminarla entera.
+
+```python
+# syntax
+tpl1 = ('item1', 'item2', 'item3')
+del tpl1
+# Example
+fruits = ('banana', 'orange', 'mango', 'lemon')
+del fruits
+```
+
+## Día 7: Sets
+
+Un  *set* es una colección de elementos distintos, no ordenados y sin índice (lo que en matemática se conoce cómo *conjunto*). En Python, los conjuntos se utilizan para almacenar elementos únicos, y es posible realizar operaciones como unión, intersección, diferencia, diferencia simétrica, subconjunto, superconjunto y conjuntos disjuntos entre ellos.
+
+### Crear un set
+
+Para crear un set se puede usar la función *set()* o simplemente utilizar llaves {}.
+ ```python
+ # syntax
+st = set()
+# syntax
+st = {'item1', 'item2', 'item3', 'item4'}
+# Example
+fruits = {'banana', 'orange', 'mango', 'lemon'}
+```
+### Operaciones y métodos
+
+En los sets podemos:
+- Ver el tamaño del set con *len()*.
+- Verificar elementos en el set con *in*.
+- Para acceder a los elementos del set se utilizan *loops*. Lo veremos más adelante.
+- Eliminar el set usando *del*.
+
+
+#### Agregar elementos al set
+
+Una vez que se crea el set, no podemos modificar ningún elemento. Sí podemos añadir elementos.
+
+- Usando *add()*:
+
+```python
+# syntax
+st = {'item1', 'item2', 'item3', 'item4'}
+st.add('item5')
+# Example
+fruits = {'banana', 'orange', 'mango', 'lemon'}
+fruits.add('lime')
+```
+
+- Usando *update()*: este método permite añadir varios elementos a la vez y su argumento debe ser una lista con los elementos a agregar.
+
+```python
+# syntax
+st = {'item1', 'item2', 'item3', 'item4'}
+st.update(['item5','item6','item7'])
+# example
+fruits = {'banana', 'orange', 'mango', 'lemon'}
+vegetables = ('tomato', 'potato', 'cabbage','onion', 'carrot')
+fruits.update(vegetables)
+```
+#### Eliminar elementos del set
+
+Si queremos también podemos borrar elementos del set.
+
+- Usando el método *remove()*: si el elemento que queremos eliminar no está en el set, va a dar error, por lo que conviene verificar antes de usarlo. Se puede usar el método *discard()* que no produce errores.
+
+```python
+# syntax
+st = {'item1', 'item2', 'item3', 'item4'}
+st.remove('item2')
+```
+- Usando *pop()*: elimina un elemento random del set.
+
+ ```python
+ fruits = {'banana', 'orange', 'mango', 'lemon'}
+fruits.pop()  # removes a random item from the set
+
+#Si nos interesa saber cuál fue el elemento que se elminió del set
+
+fruits = {'banana', 'orange', 'mango', 'lemon'}
+removed_item = fruits.pop() 
+```
+
+#### Limpiar el set
+
+Si queremos eliminar todos los elementos del set usamos el método *clear()*.
+
+```python
+# syntax
+st = {'item1', 'item2', 'item3', 'item4'}
+st.clear()
+# example
+fruits = {'banana', 'orange', 'mango', 'lemon'}
+fruits.clear()
+print(fruits) # set()
+```
+
+#### Convertir listas en sets
+
+Al hacer esto, se eliminarán automáticamente los elementos duplicados de la lista, y quedará en el conjunto un solo elemento de los repetidos.
+
+```python
+# syntax
+lst = ['item1', 'item2', 'item3', 'item4', 'item1']
+st = set(lst)  # {'item2', 'item4', 'item1', 'item3'} - the order is random, because sets in general are unordered
+# example
+fruits = ['banana', 'orange', 'mango', 'lemon','orange', 'banana']
+fruits = set(fruits) # {'mango', 'lemon', 'banana', 'orange'}
+```
+#### Unir sets
+
+Podemos unir dos sets usando el método *union()* o *update()* o el símbolo "|"
+
+- *union()*: este método devuelve un set nuevo
+
+```python
+# syntax
+st1 = {'item1', 'item2', 'item3', 'item4'}
+st2 = {'item5', 'item6', 'item7', 'item8'}
+st3 = st1.union(st2) #st3 = st1 | st2
+# example
+fruits = {'banana', 'orange', 'mango', 'lemon'}
+vegetables = {'tomato', 'potato', 'cabbage','onion', 'carrot'}
+print(fruits.union(vegetables)) # {'lemon', 'carrot', 'tomato', 'banana', 'mango', 'orange', 'cabbage', 'potato', 'onion'}
+# or using this : print(fruits | vegetables)
+```
+
+- *update()*: este método inserta un set en otro dado.
+
+```python
+# syntax
+st1 = {'item1', 'item2', 'item3', 'item4'}
+st2 = {'item5', 'item6', 'item7', 'item8'}
+st1.update(st2) # st2 contents are added to st1
+# example
+fruits = {'banana', 'orange', 'mango', 'lemon'}
+vegetables = {'tomato', 'potato', 'cabbage','onion', 'carrot'}
+fruits.update(vegetables)
+print(fruits) # {'lemon', 'carrot', 'tomato', 'banana', 'mango', 'orange', 'cabbage', 'potato', 'onion'}
+```
+
+#### Encontrar la intersección entre sets
+
+Esto significa encontrar cuales son los elementos en común en dos sets. Se utiliza el método *intersection()*  o el símbolo *&*
+
+```python
+# syntax
+st1 = {'item1', 'item2', 'item3', 'item4'}
+st2 = {'item3', 'item2'}
+st1.intersection(st2) # {'item3', 'item2'}
+# or using thia : st1 & st2
+
+# example
+whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+even_numbers = {0, 2, 4, 6, 8, 10}
+whole_numbers.intersection(even_numbers) # {0, 2, 4, 6, 8, 10}
+
+python = {'p', 'y', 't', 'h', 'o','n'}
+dragon = {'d', 'r', 'a', 'g', 'o','n'}
+python.intersection(dragon)     # {'o', 'n'}
+# python & dragon
+```
+#### Verificar subsets y super sets
+
+Se usan los métodos:
+- issubset()
+- issuperset()
+
+Un set puede ser un subset o un superset de otro set.
+
+ ```python
+ # syntax
+st1 = {'item1', 'item2', 'item3', 'item4'}
+st2 = {'item2', 'item3'}
+st2.issubset(st1) # True
+st1.issuperset(st2) # True
+# example
+whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+even_numbers = {0, 2, 4, 6, 8, 10}
+whole_numbers.issubset(even_numbers) # False, because it is a super set
+whole_numbers.issuperset(even_numbers) # True
+
+python = {'p', 'y', 't', 'h', 'o','n'}
+dragon = {'d', 'r', 'a', 'g', 'o','n'}
+python.issubset(dragon)     # False
+```
+
+#### Diferencia entre dos sets
+
+Obtener la diferencia entre dos sets. Se usa el método *difference()* o el símbolo -.
+
+```python
+# syntax
+st1 = {'item1', 'item2', 'item3', 'item4'}
+st2 = {'item2', 'item3'}
+st2.difference(st1) # set() : st2 - st1
+st1.difference(st2) # {'item1', 'item4'} => st1\st2  : st2 - st1
+
+# example
+whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+even_numbers = {0, 2, 4, 6, 8, 10}
+whole_numbers.difference(even_numbers) # {1, 3, 5, 7, 9}
+
+python = {'p', 'y', 't', 'o','n'}
+dragon = {'d', 'r', 'a', 'g', 'o','n'}
+python.difference(dragon)     # {'p', 'y', 't'}  - the result is unordered (characteristic of sets)
+# python - dragon
+dragon.difference(python)     # {'d', 'r', 'a', 'g'}
+# dragon - python
+```
+
+### Diferencias simétricas entre dos sets
+
+La diferencia simétrica significa que vamos a obtener un set que va a contener todos los ítems de los dos sets, exceptuando los elementos que están en ambos sets. Matemáticamente es: (A - B) U (B - A). Se usa el método *symmetric_difference()* o el símbolo "^".
+
+```python
+# syntax
+st1 = {'item1', 'item2', 'item3', 'item4'}
+st2 = {'item2', 'item3'}
+# it means (A\B)∪(B\A)
+st2.symmetric_difference(st1) # {'item1', 'item4'} : st2 ^ st1
+
+# example
+whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+some_numbers = {1, 2, 3, 4, 5}
+whole_numbers.symmetric_difference(some_numbers) # {0, 6, 7, 8, 9, 10}
+
+python = {'p', 'y', 't', 'h', 'o','n'}
+dragon = {'d', 'r', 'a', 'g', 'o','n'}
+python.symmetric_difference(dragon)  # {'r', 't', 'p', 'y', 'g', 'a', 'd', 'h'}
+# python ^ dragon
+```
+#### Sets conjuntos o disjuntos
+
+Si dos sets no tienen elementos en común, se los denomina disjuntos. Podemos verificar si dos sets son conjuntos o disjuntos mediante el método *isdisjoint()*.
+
+```python
+# syntax
+st1 = {'item1', 'item2', 'item3', 'item4'}
+st2 = {'item2', 'item3'}
+st2.isdisjoint(st1) # False
+# example
+even_numbers = {0, 2, 4 ,6, 8}
+odd_numbers = {1, 3, 5, 7, 9}
+even_numbers.isdisjoint(odd_numbers) # True, because no common item
+
+python = {'p', 'y', 't', 'h', 'o','n'}
+dragon = {'d', 'r', 'a', 'g', 'o','n'}
+python.isdisjoint(dragon)  # False, there are common items {'o', 'n'}
+```
+
+
+
+
+
+
+
 
 
 
