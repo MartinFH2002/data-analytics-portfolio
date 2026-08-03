@@ -1433,8 +1433,242 @@ python = {'p', 'y', 't', 'h', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.isdisjoint(dragon)  # False, there are common items {'o', 'n'}
 ```
+## Día 8: Diccionarios
 
+Un diccionario es una colección de datos no ordenada y modificable (mutable) compuesta por pares clave-valor.
 
+### Crear un diccionario
+
+Para crear un diccionario, al igual que con los sets, se utilizan las llaves, sin embargo la sintaxis es distinta. También se puede usar la función *dict()*.
+
+```python
+# syntax
+empty_dict = {}
+# Dictionary with data values
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+# example
+person = {
+    'first_name':'Asabeneh',
+    'last_name':'Yetayeh',
+    'age':250,
+    'country':'Finland',
+    'is_marred':True,
+    'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address':{
+        'street':'Space street',
+        'zipcode':'02210'
+    }
+    }
+```
+El ejemplo de arriba nos muestra que el valor del par clave-valor, puede ser cualquiera de los tipos de datos que hemos visto hasta ahora: string, boolean, list, tuple, set or a dictionary.
+
+### Tamaño del diccionario
+Se utiliza la función *len()*. 
+
+```python
+# syntax
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+print(len(dct)) # 4
+# example
+person = {
+    'first_name':'Asabeneh',
+    'last_name':'Yetayeh',
+    'age':250,
+    'country':'Finland',
+    'is_married':True,
+    'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address':{
+        'street':'Space street',
+        'zipcode':'02210'
+    }
+    }
+print(len(person)) # 7
+```
+### Acceder a los elementos del diccionario
+
+Para acceder a los valores del diccionario, simplemente utilizamos las claves que definimos para cada valor.
+```python
+# syntax
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+print(dct['key1']) # value1
+print(dct['key4']) # value4
+# example
+person = {
+    'first_name':'Asabeneh',
+    'last_name':'Yetayeh',
+    'age':250,
+    'country':'Finland',
+    'is_marred':True,
+    'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address':{
+        'street':'Space street',
+        'zipcode':'02210'
+    }
+    }
+print(person['first_name']) # Asabeneh
+print(person['country'])    # Finland
+print(person['skills'])     # ['JavaScript', 'React', 'Node', 'MongoDB', 'Python']
+print(person['skills'][0])  # JavaScript
+print(person['address']['street']) # Space street
+print(person['city'])       # Error
+```
+Acceder a un elemento mediante el nombre de la clave provoca un error si dicha clave no existe. Para evitar este error, debemos comprobar primero si la clave existe o utilizar el método `get`. El método `get` devuelve `None` —un objeto de tipo `NoneType`— si la clave no existe.
+
+```python
+person = {
+    'first_name':'Asabeneh',
+    'last_name':'Yetayeh',
+    'age':250,
+    'country':'Finland',
+    'is_marred':True,
+    'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address':{
+        'street':'Space street',
+        'zipcode':'02210'
+    }
+    }
+print(person.get('first_name')) # Asabeneh
+print(person.get('country'))    # Finland
+print(person.get('skills')) #['JavaScript', 'React', 'Node', 'MongoDB', 'Python']
+print(person.get('city'))   # None
+```
+### Agragando elementos al diccionario
+
+Podemos añadir al diccionario nuevos pares clave-valor.
+
+```python
+# syntax
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+dct['key5'] = 'value5'
+# example
+person = {
+    'first_name':'Asabeneh',
+    'last_name':'Yetayeh',
+    'age':250,
+    'country':'Finland',
+    'is_marred':True,
+    'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address':{
+        'street':'Space street',
+        'zipcode':'02210'
+        }
+}
+person['job_title'] = 'Instructor'
+person['skills'].append('HTML')
+print(person)
+```
+### Modificando elementos del diccionario
+
+Podemos modificar elementos del diccionario.
+
+```python
+# syntax
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+dct['key1'] = 'value-one'
+# example
+person = {
+    'first_name':'Asabeneh',
+    'last_name':'Yetayeh',
+    'age':250,
+    'country':'Finland',
+    'is_marred':True,
+    'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address':{
+        'street':'Space street',
+        'zipcode':'02210'
+    }
+    }
+person['first_name'] = 'Eyob'
+person['age'] = 252
+```
+### Verificar claves en el diccionario
+
+Utilizamos el operador `in` para comprobar si una clave existe en un diccionario.
+```python
+# syntax
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+print('key2' in dct) # True
+print('key5' in dct) # False
+```
+### Eliminar pares clave-valor del diccionario
+
+- pop(clave): remueve el elemento con la clave especificada.
+- popitem(): elimina el último elemento.
+- del: elimina el elemento con la clave especificada.
+
+```python
+# syntax
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+dct.pop('key1') # removes key1 item
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+dct.popitem() # removes the last item
+del dct['key2'] # removes key2 item
+# example
+person = {
+    'first_name':'Asabeneh',
+    'last_name':'Yetayeh',
+    'age':250,
+    'country':'Finland',
+    'is_marred':True,
+    'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address':{
+        'street':'Space street',
+        'zipcode':'02210'
+    }
+    }
+person.pop('first_name')        # Removes the firstname item
+person.popitem()                # Removes the address item
+del person['is_married']        # Removes the is_married item
+```
+### Cambiar un diccionario a lista
+
+El método `items()` convierte el diccionario en una lista de tuplas.
+```python
+# syntax
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+print(dct.items()) # dict_items([('key1', 'value1'), ('key2', 'value2'), ('key3', 'value3'), ('key4', 'value4')])
+```
+
+### Limpiar el diccionario
+Si no queremos los elementos de un diccionario, podemos borrarlos utilizando el método clear().
+```python
+# syntax
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+print(dct.clear()) # None
+```
+
+### Eliminar el diccionario
+Si no usamos el diccionario, lo podemos eliminar por completo.
+```python
+# syntax
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+del dct
+```
+### Copiar un diccionario
+El método keys() nos devuelve todas las claves de un diccionario como una lista.
+```python
+# syntax
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+keys = dct.keys()
+print(keys)     # dict_keys(['key1', 'key2', 'key3', 'key4'])
+```
+### Obtener las claves del diccionario en una lista
+El método keys() nos devuelve todas las claves de un diccionario como una lista.
+```python
+# syntax
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+keys = dct.keys()
+print(keys)     # dict_keys(['key1', 'key2', 'key3', 'key4'])
+```
+
+### Obtener los valores del diccionario en una lista
+El método `values` nos devuelve todos los valores de un diccionario como una lista.
+```python
+# syntax
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+values = dct.values()
+print(values)     # dict_values(['value1', 'value2', 'value3', 'value4'])
+```
 
 
 
