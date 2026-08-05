@@ -1669,9 +1669,139 @@ dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 values = dct.values()
 print(values)     # dict_values(['value1', 'value2', 'value3', 'value4'])
 ```
+## Día 9: Condicionales
 
+Por defecto, las instrucciones de un script de Python se ejecutan secuencialmente, de arriba a abajo. Si la lógica de procesamiento lo requiere, el flujo secuencial de ejecución puede alterarse de dos maneras:
 
+- Ejecución condicional: un bloque de una o más instrucciones se ejecutarán si una determinada expresión es verdadera.
+- Ejecución repetitiva: un bloque de una o más instrucciones se ejecutarán de manera repetida siempre que una determinada expresión sea verdadera. Cuando la expresión se vuelve falsa, las líneas del bloque se dejan de repetir y se procede con las siguientes instrucciones del código.
 
+En esta sección, vamos a cubrir las instrucciones *if, else, elif*. Las comparaciones y los operadores lógicos serán de gran utilidad en esta sección.
+
+### If
+La palabra clave *if* se usa para verificar si una condición es verdadera para ejecutar un bloque de instrucciones.
+
+```python
+# syntax
+if condition:
+    this part of code runs for truthy conditions
+# example 1
+a = 3
+if a > 0:
+    print('A is a positive number')
+# A is a positive number
+```
+Es necesario aclarar que se debe colocar una sangría después de una cláusula if, como se observa en la sintaxis y en el ejemplo. Además, se observa que luego de la condición se coloca :.
+
+Tomando el ejemplo, se observa que la condición que debe ser verdadera para que se ejecuten las instrucciones debajo es que a sea mayot que 0. Si eso es verdad, se ejecutará la línea para mostrar en la pantalla "A es un número positivo". Si la condición es falsa, es decir, si no se cumple que a sea mayor que 0, la instrucción del bloque if no se ejecuta y listo.
+
+Se puede añadir una serie de instrucciones para cuando la condición sea falsa, añadiendo otro bloque llamado *else*.
+
+### If Else
+
+Si la condición del if es verdadera, se ejecuta las primeras instrucciones. Si la condición del if es falsa, se ejecutan las condiciones del bloque else.
+
+```python
+# syntax
+if condition:
+    this part of code runs for truthy conditions
+else:
+     this part of code runs for false conditions
+# example 1
+a = 3
+if a < 0:
+    print('A is a negative number')
+else:
+    print('A is a positive number')
+
+# syntax
+code if condition else code
+# example 2
+a = 3
+print('A is positive') if a > 0 else print('A is negative') # first condition met, 'A is positive' will be printed
+```
+En el ejemplo, podemos observar que la condición es falsa, por lo que se ejecutaría el bloque else, no el if. 
+
+¿Qué pasa si tenemos más de dos condiciones? Se utiliza *elif*
+
+### If Elif Else
+
+En la vida cotidiana vivimos tomando decisiones, que dependen de múltiples condiciones. En programación, para considerar múltiples condiciones se utiliza elif.
+
+```python
+# syntax
+if condition:
+    code
+elif condition:
+    code
+else:
+    code
+# example
+a = 0
+if a > 0:
+    print('A is a positive number')
+elif a < 0:
+    print('A is a negative number')
+else:
+    print('A is zero')
+```
+### Condicionales anidadas
+
+Las condicionales pueden ser anidadas. En palabras simples, es posible usar condiciones adentro de otra condición.
+```python
+# syntax
+if condition:
+    code
+    if condition:
+    code
+# example
+a = 0
+if a > 0:
+    if a % 2 == 0:
+        print('A is a positive and even integer')
+    else:
+        print('A is a positive number')
+elif a == 0:
+    print('A is zero')
+else:
+    print('A is a negative number')
+```
+Podemos evitar usar condicionales anidadas utilizando el operador lógico *and*.
+
+### If y operadores lógicos
+
+```python
+# syntax
+if condition and condition:
+    code
+# example
+a = 0
+if a > 0 and a % 2 == 0:
+        print('A is an even and positive integer')
+elif a > 0 and a % 2 !=  0:
+     print('A is a positive integer')
+elif a == 0:
+    print('A is zero')
+else:
+    print('A is negative')
+```
+Para que se ejecute el código del if-and, ambas condiciones deben ser verdaderas.
+
+También se puede usar el operador lógico *or*
+
+```python
+# syntax
+if condition or condition:
+    code
+# example
+user = 'James'
+access_level = 3
+if user == 'admin' or access_level >= 4:
+        print('Access granted!')
+else:
+    print('Access denied!')
+```
+En este caso, el código del if se ejecutará siempre que al menos una de las dos condiciones se cumpla.
 
 
 
