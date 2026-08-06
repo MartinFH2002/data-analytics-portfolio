@@ -1,6 +1,19 @@
 # Fase 1: Fundamentos de Python
 Para abordar los fundamentos de python, vamos a utilizar un repositorio de GitHub llamado "30-Days-Of-Python".
-## Día 1: Introducción
+
+## Tabla de Contenidos
+- [Día 1: Introducción](#día-1-introducción)
+- [Día 2: Variables y tipos de datos](#día-2-variables-y-tipos-de-datos)
+- [Día 3: Strings](#día-3-strings)
+- [Día 4: Listas](#día-4-listas)
+- [Día 5: Tuplas](#día-5-tuplas)
+- [Día 6: Diccionarios](#día-6-diccionarios)
+- [Día 7: Sets](#día-7-sets)
+- [Día 8: Operadores](#día-8-operadores)
+- [Día 9: Condicionales](#día-9-condicionales)
+- [Día 10: Loops](#día-10-loops)
+
+# Día 1: Introducción
 Python es un lenguaje de programación de alto nivel para programación general, de código abierto y orientado a objetos.
 
 - Alto nivel: utiliza una sintaxis más similar al lenguaje humano. Esto significa que es un lenguaje "menos técnico" que otros.
@@ -9,13 +22,13 @@ Python es un lenguaje de programación de alto nivel para programación general,
 
 Python es un lenguaje fácil de aprender y de usar, y es utilizado en diversas industrias y distintas aplicaciones. Ampliamenta adoptado en la ciencia de datos.
 
-### Operaciones básicas
+## Operaciones básicas
 Podemos hacer operaciones matemáticas básicas (suma, resta, multiplicación, división, etc). Me interesa anotar algunas:
 - Potencia: el símbolo es "**" --> 3 ** 2 = 9
 - Obtener el resto de una división: el símbolo es % --> 4 % 2 = 0 y 3 % 2 = 1
 - Eliminar el resto: es decir, muestra el cociente de la división, su símbolo es "//" --> 25 // 3 = 8
 
-### Python básico
+## Python básico
 Se puede codear en la terminal o en una aplicación como VSCode, y los archivos terminan en .py.
 
 **Sangría en Python**
@@ -29,7 +42,7 @@ Por ejemplo:
 # Esto es un comentario
 ```
 
-### Tipos de datos
+## Tipos de datos
 Existen diferentes tipos de datos, ahora sólo vemos los escenciales.
 
 **Números**
@@ -124,14 +137,14 @@ Característica principal: **Solo almacena valores únicos. Si hay duplicados, s
 
 **Chqeueo del tipo de dato**: para verificar el tipo de dato almacenado en una variable se utiliza la función *type*
 
-### Archivo de Python
+## Archivo de Python
 Acá básicamente se explica lo que es un archivo de python y lo más importante a destacar es la función *print* que sirve para que se muestre lo que queremos al correr un código. Cuando corremos un código fuera de la Python Shell, no se muestran los resultados automáticamente, por eso en el código tenemos que isar la función *print* para mostrar lo que nosotros queramos al poner en marcha el código.
 
 Se explica cómo usar VSCode para escribir código y correrlo en la terminal nativa. Ya lo había aprendido con Claude, de igual forma realicé el ejercicio propuesto, creando un archivo llamado *"Day1.py "*.
 
-## Día 2: Variables, funciones nativas
+# Día 2: Variables, funciones nativas
 
-### Funciones nativas
+## Funciones nativas
 Python cuenta con una serie de funciones propias, que se pueden usar de manera estándar, sin importar ni configurar nada. Entre las más comunes encontramos: print(), len(), type(), int(), float(), str(), input(), list(), dict(), min(), max(), sum(), sorted(), open(), file(), help(), and dir(). Esta imagen tiene funciones de python:
 
 ![Reference chart displaying Python built-in functions](Images-01/builtin-functions.png)
@@ -151,7 +164,7 @@ Las funciones más comunes son:
 - max(): da el valor máximo entre los datos del argumento (sueltos o en lista)
 - sum(): suma los elementos de la lista (funciona sólo con listas)
 
-### Variables
+## Variables
 
 Una variable es básicamente un espacio en la memoria de la computadora en la cual se va a guardar un dato. Las variables son nombradas, de manera tal que su nombre es la dirección del espacio en la memoria en la que se guarda el dato. Para nombrar una variable, es altamente recomendable colocarle un nombre fácil de asociar y recordar. 
 
@@ -219,13 +232,13 @@ print("Mi edad es " + str(22))  # Mi edad es 22
 
 **Cuando tengas error por tipos incompatibles, convierte uno de los datos al tipo del otro.**
 
-## Día 3: Operadores
+# Día 3: Operadores
 
-### Boolean
+## Boolean
 
 Un dato del tipo booleano representa uno de los de estos dos valores: *True* (Verdadero) o *False* (Falso). Notar que deben comenzar con mayúsculas. El uso de estos valores se aclarará cuando veamos la operación de comparación, por ejemplo.
 
-### Operadores
+## Operadores
 
 El lenguaje de python tiene varios tipos de operadores.
 
@@ -317,9 +330,9 @@ print(not not False) # False
  
 Con lo visto hasta ahora, entendemos que podemos realizar muchas cosas al asignar valores a variables mediante funciones nativas y/o operadores como los vistos anteriormente. Todos estos conceptos básicos de programación los tengo de Cálculo Numérico, por lo que no voy a profundizar mucho más.
 
-## Día 4: Strings
+# Día 4: Strings
 
-### String
+## String
 
 Como ya vimos, un string es un tipo de dato conformado por una colección de caracteres que se encuentran entere comillas simples, dobles o triples (cuando son varias líneas de texto). Es en palabras simples, texto. Existen diversos métodos y funciones nativas para trabajar con strings, veremos algunas a continuación.
 
@@ -351,7 +364,7 @@ That is why I created 30 days of python."""
 print(multiline_string)
 ```
 
-### Concatenación de strings
+## Concatenación de strings
 
 Es posible unir strings, eso se llama concatenación:
 
@@ -368,7 +381,7 @@ print(len(first_name) > len(last_name)) # True
 print(len(full_name)) # 16
 ```
 
-### Secuencias de Escape en Strings
+## Secuencias de Escape en Strings
 
 Las secuencias de escape son códigos especiales (que empiezan con `\`) que hacen cosas especiales dentro de strings.
 
@@ -407,11 +420,11 @@ print("Dijo \"Hola\"")
 
 Son trucos para hacer cosas especiales dentro de strings. Cuando Python ve `\` seguido de ciertos caracteres, lo interpreta como una instrucción especial.
 
-### Formateo de Strings
+## Formateo de Strings
 
 En Python hay varias formas de insertar variables dentro de strings. Aquí están las tres principales:
 
-#### 1. Operador % (Estilo Antiguo)
+### 1. Operador % (Estilo Antiguo)
 
 Usa el operador `%` con placeholders especiales:
 
@@ -438,7 +451,7 @@ print(formated_string)
 - `%f` - Float
 - `%.2f` - Float con 2 dígitos decimales
 
-#### 2. Método .format() (Moderno)
+### 2. Método .format() (Moderno)
 
 Usa `{}` como placeholders y el método `.format()`:
 
@@ -469,7 +482,7 @@ print(formated_string)
 # Output: The area of a circle with radius 10 is 314.00.
 ```
 
-#### 3. F-Strings (Más Moderno - Python 3.6+)
+### 3. F-Strings (Más Moderno - Python 3.6+)
 
 Empezás el string con `f` e insertas variables entre `{}`:
 
@@ -509,7 +522,7 @@ print(formated_string)
 # Output: The area of a circle with radius 10 is 314.00.
 ```
 
-#### Comparación de los 3 métodos:
+### Comparación de los 3 métodos:
 
 ```python
 a = 4
@@ -527,11 +540,11 @@ print(f'{a} + {b} = {a + b}')
 # Todos dan: 4 + 3 = 7
 ```
 
-#### Recomendación:
+### Recomendación:
 
 **Usar f-strings.** Son más legibles, más simples y es el estándar actual en Python.
 
-### Strings como secuencias de caracteres
+## Strings como secuencias de caracteres
 
 Un stirng es una secuencia de caracteres, y comparten los mismos métodos de acceso con las demás secuencias ordenadas de caracteres como las listas y las tuplas. Ls forma más sencilla de extraer carácteres individuales de un string (y de cualquier secuencia ordenada en general) es desglosando los caracteres en variables. 
 
@@ -546,7 +559,7 @@ print(d) # h
 print(e) # o
 print(f) # n
 ```
-#### Acceder a los caracteres por índices
+### Acceder a los caracteres por índices
 
 Al igual que en las listas y tuplas, podemos acceder a los caracteres del string mediante el uso de su índice. Siempre se comienza a contar desde cero, por lo tanto la primer letra o carácter del string es correspondiente al índice 0.
 
@@ -569,7 +582,7 @@ print(last_letter) # n
 second_last = language[-2]
 print(second_last) # o
 ```
-#### División del string
+### División del string
 
 Es posible dividir un string en substrings.
 
@@ -585,14 +598,14 @@ print(last_three)   # hon
 last_three = language[3:]
 print(last_three)   # hon
 ```
-#### Dar vuelta un string
+### Dar vuelta un string
 
 Es fácil dar vuelta un string en python.
 ```python
 greeting = 'Hello, World!'
 print(greeting[::-1]) # !dlroW ,olleH
 ```
-#### División de string salteando caracteres
+### División de string salteando caracteres
 
 Se realiza mediante la asignación de un paso. Por ejemplo, para un paso 2 se tomará un caracter de a cada dos. En el ejemplo se ve más claro.
 ```python
@@ -600,7 +613,7 @@ language = 'Python'
 pto = language[0:6:2] #Step: 2
 print(pto) # Pto
 ```
-### Métodos para trabajar con strings
+## Métodos para trabajar con strings
 
 Vamos a ver algunos métodos utilizados para formatear strings.
 
@@ -777,7 +790,7 @@ challenge = 'Thirty Days Of Python'
 print(challenge.swapcase())  # tHIRTY dAYS oF pYTHON
 ```
 
-## Día 5: Listas
+# Día 5: Listas
 
 Hay cuatro tipos de colecciones de datos en Python, como ya vimos:
 
@@ -786,7 +799,7 @@ Hay cuatro tipos de colecciones de datos en Python, como ya vimos:
 - **Sets**: es una colección de datos desordenados, sin índices, e inmutable (pero se pueden agregar elementos). No permite elementos duplicados.
 - **Diccionarios**: es una colección desordenada, pero indexada, es decir que se accede a cada elemento mediante un índice. No permite elementos duplicados.
 
-### ¿Cómo se crea una lista?
+## ¿Cómo se crea una lista?
 
 Existen dos formas:
 
@@ -807,7 +820,7 @@ print(len(empty_list)) # 0
 Nota 1: La función *len()* nos da la cantidad de elementos que contiene la lista. 
 Nota 2: Una lista puede contener datos de distintos tipos.
 
-### Acceder a los elementos de la lista mediante índices positivos
+## Acceder a los elementos de la lista mediante índices positivos
 
 Es posible acceder a los elementos de la lísta mediante su índice. En Python, los índices comienzan siempre desde el número 0. Por ejemplo:
 
@@ -825,7 +838,7 @@ print(last_fruit) # lemon
 last_index = len(fruits) - 1
 last_fruit = fruits[last_index]
 ```
-### Acceder a los elementos de la lista mediante índices negativos
+## Acceder a los elementos de la lista mediante índices negativos
 
 Los índices negativos comienzan desde el -1, el cual señala el último elemento. El -2 se refiere al penúltimo elemento, y así sucesivamente. Por ejemplo: 
 
@@ -841,7 +854,7 @@ print(last_fruit)       # lemon
 print(second_last)      # mango
 ```
 
-### Desarmar una lista en variables individuales
+## Desarmar una lista en variables individuales
 
 Como el título lo menciona, consiste en ir desarmando la lista en variables individuales, que alojarán a cada elemento de la lista. La sintaxis es la siguiente:
 
@@ -881,7 +894,7 @@ print(sw) # 'Sweden'
 print(scandic) # ['Denmark','Finland','Norway','Iceland']
 print(es) # 'Estonia'
 ```
-### Extraer pedazos de lista
+## Extraer pedazos de lista
 
 Se pueden crear nuevas listas a partir de los elementos de una lista existente. Se puede hacer mediante el uso de índices positivos y negativos.
 
@@ -907,7 +920,7 @@ orange_mango_lemon = fruits[-3:] # this will give starting from -3 to the end,['
 reverse_fruits = fruits[::-1] # a negative step will take the list in reverse order,['lemon', 'mango', 'orange', 'banana']
 ```
 
-### Modificar una lista
+## Modificar una lista
 
 Como mencionamos en su definición, la lista puede ser modificada.
 
@@ -922,7 +935,7 @@ fruits[last_index] = 'lime'
 print(fruits)        #  ['avocado', 'apple', 'mango', 'lime']
 ```
 
-### Verificar que un dato forme parte de la lista
+## Verificar que un dato forme parte de la lista
 Se hace mediante el operador *in*.
 
 ```python
@@ -932,7 +945,7 @@ print(does_exist)  # True
 does_exist = 'lime' in fruits
 print(does_exist)  # False
 ```
-### Agregar elementos a una lista
+## Agregar elementos a una lista
 
 Se hace mediante el método *.append()*.
 
@@ -947,7 +960,7 @@ print(fruits)           # ['banana', 'orange', 'mango', 'lemon', 'apple']
 fruits.append('lime')   # ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime']
 print(fruits)
 ```
-### Insertat elementos en una lista
+## Insertat elementos en una lista
 
 Se hace mediante el método *.insert()*. La principal diferencia es que nos permite agregar elementos en posiciones específicas de la lista, usando índices. El método anterior los agrega al final siempre.
 
@@ -962,7 +975,7 @@ print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
 fruits.insert(3, 'lime')   # ['banana', 'orange', 'apple', 'lime', 'mango', 'lemon']
 print(fruits)
 ```
-### Sacar o eliminar elementos de una lista
+## Sacar o eliminar elementos de una lista
 
  - Mediante el método *.remove()*: 
 
@@ -1012,7 +1025,7 @@ print(fruits)       # ['orange', 'lime']
 del fruits
 print(fruits)       # This should give: NameError: name 'fruits' is not defined
 ```
-### Vaciar la lista
+## Vaciar la lista
 
 Básicamente dejar la lista vacía, sin elementos, pero sin eliminarla. Se hace mediante el método *.clear()*.
 
@@ -1025,7 +1038,7 @@ fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.clear()
 print(fruits)       # []
 ```
-### Hacer una copia de la lista
+## Hacer una copia de la lista
 
 Si bien podríamos hacer una copia de la lista reasignandola a una nueva variable (list2 = list1), esto haría que si modificamos la list2, la list1 también se modifique, y a veces es necesario conservar la original. Entonces para hacer una copia se utiliza el método *.copy()*
 
@@ -1039,14 +1052,14 @@ fruits_copy = fruits.copy()
 print(fruits_copy)       # ['banana', 'orange', 'mango', 'lemon']
 ```
 
-### Unir listas
+## Unir listas
 
 Existen varias maneras de unir dos o más listas en python:
 
  - El operador más (+): se usa como "list1 + list2"
  - El método *.extend()*: se usa como "list1.extend(list2)"
 
-### Contar items en una lista
+## Contar items en una lista
 
 Se puede contar el número de veces que un item aparece en la lista, mediante le método *.count()*
 
@@ -1060,7 +1073,7 @@ print(fruits.count('orange'))   # 1
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
 print(ages.count(24))           # 3
 ```
-### Encontrar el índice de un elemento
+## Encontrar el índice de un elemento
 
 Podemos saber la posición de un elmento de la lista mediante el método *.index()*:
 
@@ -1074,7 +1087,7 @@ print(fruits.index('orange'))   # 1
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
 print(ages.index(24))           # 2, the first occurrence
 ```
-### Dar vuelta una lista
+## Dar vuelta una lista
 
 Se usa el método *.reverse()* para dar vuelta el orden de una lista.
 
@@ -1091,7 +1104,7 @@ ages.reverse()
 print(ages) # [24, 25, 24, 26, 25, 24, 19, 22]
 ```
 
-### Ordenar los elementos de una lista
+## Ordenar los elementos de una lista
 
 Es posible mediante dos formas.
 
@@ -1126,7 +1139,7 @@ fruits = sorted(fruits,reverse=True)
 print(fruits)     # ['orange', 'mango', 'lemon', 'banana']
 ```
 
-## Día 6: Tuplas
+# Día 6: Tuplas
 
 Una tupla es una colección de distintos tipos de datos, que se encuentran en orden y son inmutables, lo cual implica que una vez creada, no se puede modificar. Es decir, los métodos add, insert, remove no pueden ser usados en tuplas debido a que estas son inmutables. Las tuplas se definen entre paréntesis ().
 
@@ -1136,7 +1149,7 @@ Las tuplas sólo cuentan con algunos pocos métodos:
 - *index()*: para encontrar el índice de un item específico en la tupla.
 - *+ operator*: para unir dos o más tuplas y crear una nueva.
 
-### Crear una tupla
+## Crear una tupla
 
 Se puede crear una tupla vacía:
 
@@ -1163,7 +1176,7 @@ Al igual que con las listas podemos realizar las siguientes acciones:
 
 Lo unico que no podemos hacer es cambiar, añadir o eliminar elementos de la tupla.
 
-### Cambiar una tupla a lista
+## Cambiar una tupla a lista
 
 Es posible cambiar las tuplas a listas y viceversa.
 
@@ -1180,7 +1193,7 @@ fruits = tuple(fruits)
 print(fruits)     # ('apple', 'orange', 'mango', 'lemon')
 ```
 
-### Eliminar tuplas
+## Eliminar tuplas
 
 Como ya mencionamos, no podemos remover elementos de la tupla, pero si es posible eliminarla entera.
 
@@ -1193,11 +1206,11 @@ fruits = ('banana', 'orange', 'mango', 'lemon')
 del fruits
 ```
 
-## Día 7: Sets
+# Día 7: Sets
 
 Un  *set* es una colección de elementos distintos, no ordenados y sin índice (lo que en matemática se conoce cómo *conjunto*). En Python, los conjuntos se utilizan para almacenar elementos únicos, y es posible realizar operaciones como unión, intersección, diferencia, diferencia simétrica, subconjunto, superconjunto y conjuntos disjuntos entre ellos.
 
-### Crear un set
+## Crear un set
 
 Para crear un set se puede usar la función *set()* o simplemente utilizar llaves {}.
  ```python
@@ -1208,7 +1221,7 @@ st = {'item1', 'item2', 'item3', 'item4'}
 # Example
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 ```
-### Operaciones y métodos
+## Operaciones y métodos
 
 En los sets podemos:
 - Ver el tamaño del set con *len()*.
@@ -1217,7 +1230,7 @@ En los sets podemos:
 - Eliminar el set usando *del*.
 
 
-#### Agregar elementos al set
+### Agregar elementos al set
 
 Una vez que se crea el set, no podemos modificar ningún elemento. Sí podemos añadir elementos.
 
@@ -1243,7 +1256,7 @@ fruits = {'banana', 'orange', 'mango', 'lemon'}
 vegetables = ('tomato', 'potato', 'cabbage','onion', 'carrot')
 fruits.update(vegetables)
 ```
-#### Eliminar elementos del set
+### Eliminar elementos del set
 
 Si queremos también podemos borrar elementos del set.
 
@@ -1266,7 +1279,7 @@ fruits = {'banana', 'orange', 'mango', 'lemon'}
 removed_item = fruits.pop() 
 ```
 
-#### Limpiar el set
+### Limpiar el set
 
 Si queremos eliminar todos los elementos del set usamos el método *clear()*.
 
@@ -1280,7 +1293,7 @@ fruits.clear()
 print(fruits) # set()
 ```
 
-#### Convertir listas en sets
+### Convertir listas en sets
 
 Al hacer esto, se eliminarán automáticamente los elementos duplicados de la lista, y quedará en el conjunto un solo elemento de los repetidos.
 
@@ -1292,7 +1305,7 @@ st = set(lst)  # {'item2', 'item4', 'item1', 'item3'} - the order is random, bec
 fruits = ['banana', 'orange', 'mango', 'lemon','orange', 'banana']
 fruits = set(fruits) # {'mango', 'lemon', 'banana', 'orange'}
 ```
-#### Unir sets
+### Unir sets
 
 Podemos unir dos sets usando el método *union()* o *update()* o el símbolo "|"
 
@@ -1324,7 +1337,7 @@ fruits.update(vegetables)
 print(fruits) # {'lemon', 'carrot', 'tomato', 'banana', 'mango', 'orange', 'cabbage', 'potato', 'onion'}
 ```
 
-#### Encontrar la intersección entre sets
+### Encontrar la intersección entre sets
 
 Esto significa encontrar cuales son los elementos en común en dos sets. Se utiliza el método *intersection()*  o el símbolo *&*
 
@@ -1345,7 +1358,7 @@ dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.intersection(dragon)     # {'o', 'n'}
 # python & dragon
 ```
-#### Verificar subsets y super sets
+### Verificar subsets y super sets
 
 Se usan los métodos:
 - issubset()
@@ -1370,7 +1383,7 @@ dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.issubset(dragon)     # False
 ```
 
-#### Diferencia entre dos sets
+### Diferencia entre dos sets
 
 Obtener la diferencia entre dos sets. Se usa el método *difference()* o el símbolo -.
 
@@ -1394,7 +1407,7 @@ dragon.difference(python)     # {'d', 'r', 'a', 'g'}
 # dragon - python
 ```
 
-### Diferencias simétricas entre dos sets
+## Diferencias simétricas entre dos sets
 
 La diferencia simétrica significa que vamos a obtener un set que va a contener todos los ítems de los dos sets, exceptuando los elementos que están en ambos sets. Matemáticamente es: (A - B) U (B - A). Se usa el método *symmetric_difference()* o el símbolo "^".
 
@@ -1415,7 +1428,7 @@ dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.symmetric_difference(dragon)  # {'r', 't', 'p', 'y', 'g', 'a', 'd', 'h'}
 # python ^ dragon
 ```
-#### Sets conjuntos o disjuntos
+### Sets conjuntos o disjuntos
 
 Si dos sets no tienen elementos en común, se los denomina disjuntos. Podemos verificar si dos sets son conjuntos o disjuntos mediante el método *isdisjoint()*.
 
@@ -1433,11 +1446,11 @@ python = {'p', 'y', 't', 'h', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.isdisjoint(dragon)  # False, there are common items {'o', 'n'}
 ```
-## Día 8: Diccionarios
+# Día 8: Diccionarios
 
 Un diccionario es una colección de datos no ordenada y modificable (mutable) compuesta por pares clave-valor.
 
-### Crear un diccionario
+## Crear un diccionario
 
 Para crear un diccionario, al igual que con los sets, se utilizan las llaves, sin embargo la sintaxis es distinta. También se puede usar la función *dict()*.
 
@@ -1462,7 +1475,7 @@ person = {
 ```
 El ejemplo de arriba nos muestra que el valor del par clave-valor, puede ser cualquiera de los tipos de datos que hemos visto hasta ahora: string, boolean, list, tuple, set or a dictionary.
 
-### Tamaño del diccionario
+## Tamaño del diccionario
 Se utiliza la función *len()*. 
 
 ```python
@@ -1484,7 +1497,7 @@ person = {
     }
 print(len(person)) # 7
 ```
-### Acceder a los elementos del diccionario
+## Acceder a los elementos del diccionario
 
 Para acceder a los valores del diccionario, simplemente utilizamos las claves que definimos para cada valor.
 ```python
@@ -1557,7 +1570,7 @@ person['job_title'] = 'Instructor'
 person['skills'].append('HTML')
 print(person)
 ```
-### Modificando elementos del diccionario
+## Modificando elementos del diccionario
 
 Podemos modificar elementos del diccionario.
 
@@ -1581,7 +1594,7 @@ person = {
 person['first_name'] = 'Eyob'
 person['age'] = 252
 ```
-### Verificar claves en el diccionario
+## Verificar claves en el diccionario
 
 Utilizamos el operador `in` para comprobar si una clave existe en un diccionario.
 ```python
@@ -1590,7 +1603,7 @@ dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print('key2' in dct) # True
 print('key5' in dct) # False
 ```
-### Eliminar pares clave-valor del diccionario
+## Eliminar pares clave-valor del diccionario
 
 - pop(clave): remueve el elemento con la clave especificada.
 - popitem(): elimina el último elemento.
@@ -1620,7 +1633,7 @@ person.pop('first_name')        # Removes the firstname item
 person.popitem()                # Removes the address item
 del person['is_married']        # Removes the is_married item
 ```
-### Cambiar un diccionario a lista
+## Cambiar un diccionario a lista
 
 El método `items()` convierte el diccionario en una lista de tuplas.
 ```python
@@ -1629,7 +1642,7 @@ dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print(dct.items()) # dict_items([('key1', 'value1'), ('key2', 'value2'), ('key3', 'value3'), ('key4', 'value4')])
 ```
 
-### Limpiar el diccionario
+## Limpiar el diccionario
 Si no queremos los elementos de un diccionario, podemos borrarlos utilizando el método clear().
 ```python
 # syntax
@@ -1637,14 +1650,14 @@ dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print(dct.clear()) # None
 ```
 
-### Eliminar el diccionario
+## Eliminar el diccionario
 Si no usamos el diccionario, lo podemos eliminar por completo.
 ```python
 # syntax
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 del dct
 ```
-### Copiar un diccionario
+## Copiar un diccionario
 El método keys() nos devuelve todas las claves de un diccionario como una lista.
 ```python
 # syntax
@@ -1652,7 +1665,7 @@ dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 keys = dct.keys()
 print(keys)     # dict_keys(['key1', 'key2', 'key3', 'key4'])
 ```
-### Obtener las claves del diccionario en una lista
+## Obtener las claves del diccionario en una lista
 El método keys() nos devuelve todas las claves de un diccionario como una lista.
 ```python
 # syntax
@@ -1661,7 +1674,7 @@ keys = dct.keys()
 print(keys)     # dict_keys(['key1', 'key2', 'key3', 'key4'])
 ```
 
-### Obtener los valores del diccionario en una lista
+## Obtener los valores del diccionario en una lista
 El método `values` nos devuelve todos los valores de un diccionario como una lista.
 ```python
 # syntax
@@ -1669,7 +1682,7 @@ dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 values = dct.values()
 print(values)     # dict_values(['value1', 'value2', 'value3', 'value4'])
 ```
-## Día 9: Condicionales
+# Día 9: Condicionales
 
 Por defecto, las instrucciones de un script de Python se ejecutan secuencialmente, de arriba a abajo. Si la lógica de procesamiento lo requiere, el flujo secuencial de ejecución puede alterarse de dos maneras:
 
@@ -1678,7 +1691,7 @@ Por defecto, las instrucciones de un script de Python se ejecutan secuencialment
 
 En esta sección, vamos a cubrir las instrucciones *if, else, elif*. Las comparaciones y los operadores lógicos serán de gran utilidad en esta sección.
 
-### If
+## If
 La palabra clave *if* se usa para verificar si una condición es verdadera para ejecutar un bloque de instrucciones.
 
 ```python
@@ -1697,7 +1710,7 @@ Tomando el ejemplo, se observa que la condición que debe ser verdadera para que
 
 Se puede añadir una serie de instrucciones para cuando la condición sea falsa, añadiendo otro bloque llamado *else*.
 
-### If Else
+## If Else
 
 Si la condición del if es verdadera, se ejecuta las primeras instrucciones. Si la condición del if es falsa, se ejecutan las condiciones del bloque else.
 
@@ -1724,7 +1737,7 @@ En el ejemplo, podemos observar que la condición es falsa, por lo que se ejecut
 
 ¿Qué pasa si tenemos más de dos condiciones? Se utiliza *elif*
 
-### If Elif Else
+## If Elif Else
 
 En la vida cotidiana vivimos tomando decisiones, que dependen de múltiples condiciones. En programación, para considerar múltiples condiciones se utiliza elif.
 
@@ -1745,7 +1758,7 @@ elif a < 0:
 else:
     print('A is zero')
 ```
-### Condicionales anidadas
+## Condicionales anidadas
 
 Las condicionales pueden ser anidadas. En palabras simples, es posible usar condiciones adentro de otra condición.
 ```python
@@ -1768,7 +1781,7 @@ else:
 ```
 Podemos evitar usar condicionales anidadas utilizando el operador lógico *and*.
 
-### If y operadores lógicos
+## If y operadores lógicos
 
 ```python
 # syntax
@@ -1803,9 +1816,232 @@ else:
 ```
 En este caso, el código del if se ejecutará siempre que al menos una de las dos condiciones se cumpla.
 
+# Día 10: Loops
 
+Los loops se utilizan para manejar tareas repetitivas en la programación. El lenguaje python provee dos tipos de loops:
+- while loop
+- for loop
 
+## While Loop
 
+La palabra *while* es una de las palabras reservadas de python, ya que se usa para iniciar el loop while. Este loop consiste en ejecutar un bloque de instrucciones de forma repetitiva mientras que una condición dada sea verdadera. Cuando esta condición se vuelve falsa, se sale del loop y se ejecutan las líneas de código que siguen del programa.
+
+```python
+# syntax
+while condition:
+    code goes here
+# example
+count = 0
+while count < 5:
+    print(count)
+    count = count + 1
+#prints from 0 to 4
+```
+Si estamos interesados en que se ejecute un determinado bloque de instrucciones una vez que la condición deje de cumplirse, se utiliza *else*.
+
+```python
+# syntax
+while condition:
+    code goes here
+else:
+    code goes here
+# example
+count = 0
+while count < 5:
+    print(count)
+    count = count + 1
+else:
+    print(count)
+# Cuando count llegue a 5 la condición va a ser falsa, por lo que se ejecuta el bloque else, y se mostratá el 5 en pantalla.
+```
+### Break y Continuie - Parte 1
+
+- Break: usamos *break* cuando queremos salir del loop o pararlo.
+```python
+# syntax
+while condition:
+    code goes here
+    if another_condition:
+        break
+# example
+count = 0
+while count < 5:
+    print(count)
+    count = count + 1
+    if count == 3:
+        break
+# Se mostrara 0, 1 y 2, pero el loop se frenará cuando count sea igual a 3.
+```
+- Continue: con la instrucción *continue* podemos saltar la iteración actual y pasar a la siguiente.
+```python
+  # syntax
+while condition:
+    code goes here
+    if another_condition:
+        continue
+# example
+count = 0
+while count < 5:
+    if count == 3:     # Lo que está adentro de este if se va a ejecutar solo cuando count sea igual a 3
+        count += 1     # Va a sumar 1
+        continue       # Salta las lineas de código que siguen en esta iteración. Por lo que el print y el incremento de abajo no se ejecutan.
+    print(count)
+    count = count + 1
+# Esto imprime 0, 1, 2, se salta el 3 (no lo imprime), e imprime el 4.
+```
+## For Loop
+
+Este bucle se utiliza generalmente para iterar sobre una secuencia (lista, tupla, set, diccionario, o string).
+
+- for loop en una lista:
+```python
+# syntax
+for iterator in lst:
+    code goes here
+# example
+numbers = [0, 1, 2, 3, 4, 5]
+for number in numbers: # number is temporary name to refer to the list's items, valid only inside this loop
+    print(number)       # the numbers will be printed line by line, from 0 to 5
+```
+- for loop en un string:
+```python
+# syntax
+for iterator in string:
+    code goes here
+# example
+language = 'Python'
+for letter in language:
+    print(letter)
+```
+- for loop en una tupla:
+```python
+# syntax
+for iterator in tpl:
+    code goes here
+# example
+numbers = (0, 1, 2, 3, 4, 5)
+for number in numbers:
+    print(number)
+```
+- for loop en un diccionario: esto permite obtener las claves del diccionario.
+```python
+  # syntax
+for iterator in dct:
+    code goes here
+# example
+person = {
+    'first_name':'Asabeneh',
+    'last_name':'Yetayeh',
+    'age':250,
+    'country':'Finland',
+    'is_marred':True,
+    'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address':{
+        'street':'Space street',
+        'zipcode':'02210'
+    }
+}
+for key in person:
+    print(key)
+
+for key, value in person.items():
+    print(key, value) # this way we get both keys and values printed out
+```
+- for loop en un set
+```python
+# syntax
+for iterator in st:
+    code goes here
+# example
+it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
+for company in it_companies:
+    print(company)
+```
+
+### Break y Continue - Parte 2
+
+Es la misma lógica pero aplicada al bucle for. Veamos directamente algunos ejemplos.
+
+```python
+# Break
+numbers = (0,1,2,3,4,5)
+for number in numbers:
+    print(number)
+    if number == 3:
+        break
+# El bucle se frena cuando llega a 3
+
+# Continue
+numbers = (0,1,2,3,4,5)
+for number in numbers:
+    print(number)
+    if number == 3:
+        continue
+    print('Next number should be ', number + 1) if number != 5 else print("loop's end") # for short hand conditions need both if and else statements
+print('outside the loop')
+```
+En el ejemplo anterior, si el número es igual a 3, se omite el paso posterior a la condición (pero dentro del bucle) y la ejecución del bucle continúa si quedan iteraciones pendientes.
+
+### La función Range
+
+La función *range()* es usada para obtener una lista de números. Tiene tres argumentos, inicio, fin e incremento (en ese orden). Por defecto, la función range toma como inicio el 0 e incremento el 1, por lo que puede funcionar usando un solo argumento, que es el fin. Veamos ejemplos:
+
+```python
+lst = list(range(11))
+print(lst) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+st = set(range(1, 11))    # 2 arguments indicate start and end of the sequence, step set to default 1
+print(st) # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+lst = list(range(0,11,2))
+print(lst) # [0, 2, 4, 6, 8, 10]
+st = set(range(0,11,2))
+print(st) #  {0, 2, 4, 6, 8, 10}
+
+# for backward from start to end 
+lst = list(range(11,0,-2))
+print(lst) # [11,9,7,5,3,1]
+
+# Aplicado al loop for
+for number in range(11):
+    print(number)   # prints 0 to 10, not including 11
+```
+### for loop anidado
+Podemos programar bucles adentro de un bucle. Veamos el ejemplo:
+```python
+person = {
+    'first_name': 'Asabeneh',
+    'last_name': 'Yetayeh',
+    'age': 250,
+    'country': 'Finland',
+    'is_marred': True,
+    'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address': {
+        'street': 'Space street',
+        'zipcode': '02210'
+    }
+}
+for key in person:
+    if key == 'skills':
+        for skill in person['skills']:
+            print(skill)
+# Este código va a ir leyendo las laves del diccionario y cuando llegue a la clave skills, se va a meter al if que contiene un for loop, este último lo que va a hacer básicamente es imprimir todas las skills que están en la lista de skills (que es el valor de la clave skills).
+```
+### For Else
+
+Si queremos mostrar un mensaje determinado cuando se termine el loop, usamos *else*
+```python
+for number in range(11):
+    print(number)   # prints 0 to 10, not including 11
+else:
+    print('The loop stops at', number)
+```
+### Pass
+Esto sirve principalmente cuando estamos estableciendo la estructura del código, y sabemos que vamos a usar un for, pero no sabemos que vamos a poner exactamente adentro del bloque. Si no usamos *pass* y dejamos vacío luego del for, python interpretará error. Al usar *pass* el código correrá aunque realmente no se haga nada adentro del bucle for.
+
+```python
+for number in range(6):
+    pass
+```
 
 
 
